@@ -1,0 +1,6 @@
+[nginx]
+Ip_Vmnginx
+
+[all:vars]
+ansible_user="arif"
+ansible_pythone_interpreter=/usr/bin/python3
