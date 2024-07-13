@@ -1,0 +1,13 @@
+server {
+    listen       9091;
+    listen       [::]:9091;
+    server_name  _;
+
+    access_log  /var/log/nginx/default.access.log;
+    error_log   /var/log/nginx/default.error.log;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+	}
+}

@@ -2,23 +2,27 @@
   hosts: nginx
   become: yes
   tasks:
-    - name: Install Nginx
+    - name: Install NGINX
       apt:
         name: nginx
         state: present
+        update_cache: yes
 
-    - name: Change Nginx Port to 9091 (IPv4)
-      lineinfile:  
-        path: /etc/nginx/sites-enabled/default
-        regexp: 'Listen\s+80\s+default_server;'
-        line: 'Listen 9091 default_server;'
-        state: present
-        backup: yes
+    - name: Configure NGINX to listen on port 9091
+      template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/sites-available/default
+      notify: restart nginx
 
-    - name: Ensure Nginx is started and enabled
+    - name: Enable NGINX site
+      file:
+        src: /etc/nginx/sites-available/default
+        dest: /etc/nginx/sites-enabled/default
+        state: link
+
+  handlers:
+    - name: restart nginx
       service:
         name: nginx
-        state: started
-        enabled: yes
 
 
