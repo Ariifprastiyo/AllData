@@ -1,15 +1,14 @@
----
 - name: Installation & Konfiguration
   hosts: nginx
   become: yes
   tasks:
     - name: Install Nginx
-      apt: 
+      apt:
         name: nginx
         state: present
 
-    - name: Change Nginx Port to 9091 IpV4
-      Lineinfile:
+    - name: Change Nginx Port to 9091 (IPv4)
+      lineinfile:  
         path: /etc/nginx/sites-enabled/default
         regexp: 'Listen\s+80\s+default_server;'
         line: 'Listen 9091 default_server;'
@@ -17,8 +16,9 @@
         backup: yes
 
     - name: Ensure Nginx is started and enabled
-      service: 
+      service:
         name: nginx
         state: started
         enabled: yes
+
 
