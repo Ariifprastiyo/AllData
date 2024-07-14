@@ -32,7 +32,7 @@ https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.
  ![alt text](img/5.png)
 8. Cek versi ansible
 
-    ![alt text](img/6.png)
+![alt text](img/6.png)
 
 9. Cek versi python3
 
