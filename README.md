@@ -54,7 +54,15 @@ https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.
 
     ![alt text](img/10.png)
 
-14. Buat Folder `templates` yang digunakan untuk menyimpan file `nginx.conf.j2` yang berisi perintah untuk mendegarkan port berapa, Perintah server name mendegarkan dan melayani semua (-) host, acces log perintah untuk pecatatn dan penyimpanan permintaan klien. Perintah error log menentukan file tempat server akan mencatat pesan error.
+14. Cek konfigurasi `ansible.cfg` & `Iventory` sudah benar belum dengan perintah
+
+```
+    ansible nginx -m ping
+```
+   ![alt text](img/21.png)
+
+
+15. Buat Folder `templates` yang digunakan untuk menyimpan file `nginx.conf.j2` yang berisi perintah untuk mendegarkan port berapa, Perintah server name mendegarkan dan melayani semua (-) host, acces log perintah untuk pecatatn dan penyimpanan permintaan klien. Perintah error log menentukan file tempat server akan mencatat pesan error, Blok location ini mendefinisikan bagaimana Nginx akan menangani permintaan untuk jalur URL tertentu dalam blok server ini.
 
      ![alt text](img/20.png)
 
@@ -62,16 +70,16 @@ https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.
 
     ![alt text](img/11.png)
 
-15. Jalankan file `.yaml` dengan perintah berikut
+17. Jalankan file `.yaml` dengan perintah berikut
 ```
       ansible-playbook install-nginx.yaml
 ```
 
  ![alt text](img/12.png)
-16. Masuk kedalam vm nginx dan lihat apakah sudah berjalan nginx di port 9091
+18. Masuk kedalam vm nginx dan lihat apakah sudah berjalan nginx di port 9091
 
 ![alt text](img/13.png)
 
-17. Masuk kebrowser ketik Ip vm nginx beserta port 9091
+19. Masuk kebrowser ketik Ip vm nginx beserta port 9091
 
   ![alt text](img/14.png)
