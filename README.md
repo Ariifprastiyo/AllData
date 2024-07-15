@@ -52,14 +52,14 @@ https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.
 
 13. Lalu buat file `Inventory` dimana didalam isinya ditujukan konfigurasi ansible ditujukan di vm mana, variable pendukung seperti ansible user, interpreter ansible python ini disimpan dimana.
 
-    ![alt text](img/10.png)
+    ![alt text](img/21.png)
 
 14. Cek konfigurasi `ansible.cfg` & `Iventory` sudah benar belum dengan perintah
 
 ```
     ansible nginx -m ping
 ```
-   ![alt text](img/21.png)
+   ![alt text](img/10.png)
 
 
 15. Buat Folder `templates` yang digunakan untuk menyimpan file `nginx.conf.j2` yang berisi perintah untuk mendegarkan port berapa, Perintah server name mendegarkan dan melayani semua (-) host, acces log perintah untuk pecatatn dan penyimpanan permintaan klien. Perintah error log menentukan file tempat server akan mencatat pesan error, Blok location ini mendefinisikan bagaimana Nginx akan menangani permintaan untuk jalur URL tertentu dalam blok server ini.
